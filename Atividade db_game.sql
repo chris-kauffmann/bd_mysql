@@ -20,7 +20,9 @@ FOREIGN KEY (classes_id) REFERENCES tb_classes(id)
 
 );
 
-INSERT INTO tb_classes (categoria)
+ALTER TABLE tb_classes ADD tipo VARCHAR(255);
+
+INSERT INTO tb_classes (categoria,tipo)
 VALUES ("Guerreiro");
 
 INSERT INTO tb_classes (categoria)
@@ -34,6 +36,15 @@ VALUES ("Anão");
 
 INSERT INTO tb_classes (categoria)
 VALUES ("Hobbit");
+
+DELETE FROM tb_classes WHERE id = 6;
+DELETE FROM tb_classes WHERE id = 7;
+
+UPDATE  tb_classes SET tipo = "Humano" WHERE id=1;
+UPDATE  tb_classes SET tipo = "Istari" WHERE id=2;
+UPDATE  tb_classes SET tipo = "Imortal" WHERE id=3;
+UPDATE  tb_classes SET tipo = "Subterraneo" WHERE id=4;
+UPDATE  tb_classes SET tipo = "Fada" WHERE id=5;
 
 SELECT * FROM tb_classes;
 
